@@ -34,7 +34,7 @@ class ListItem extends Component {
               onClickEnter={this.onItemSelect}
              >
               <div className="localbox">
-                  <div className="localimg">{<img src={this.props.item.image} alt="location image"/>}</div>
+                  <div className="localimg">{<img src={this.props.item.image} alt="location"/>}</div>
                   <div className="localcontent">
                       {this.props.item.sponsored && (
                           <span className="localstatus">Sponsored</span>

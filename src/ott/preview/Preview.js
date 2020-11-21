@@ -78,7 +78,7 @@ class Preview extends Component {
 
                 </Focusable>
                 <Focusable className="prev-options">
-                  <img src={watchlist} />
+                  <img src={watchlist} alt="watch list"/>
                   <h5>Watchlist</h5>
                 </Focusable>
               </div>
