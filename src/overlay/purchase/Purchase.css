@@ -1,0 +1,119 @@
+.modal-overlay {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  background-color: rgba(0, 0, 0, 0.9);
+  -webkit-transition: 0.5s;
+  overflow: auto;
+  transition: all 0.3s linear;
+}
+.modal-content {
+  margin: auto;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.blur-container.pcontainer {
+  padding-top: 0;
+  width: 79.375rem;
+}
+
+.billicon h5 {
+  font-size: 3.125rem;
+  font-weight: 500;
+  margin: 0;
+}
+.billicon p {
+  font-size: 1.875rem;
+  font-weight: 400;
+  margin: 0.8125rem 0 0;
+}
+.billicon h6 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 0;
+  margin-top: 3.1875rem;
+}
+.roombill {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-weight: 400;
+  margin: 5.6875rem 0 7.125rem 0;
+}
+.ramt {
+  font-size: 6.25rem;
+  margin: 0;
+}
+.pmsg {
+  font-size: 1.25rem;
+  margin: 0;
+  /* margin-top: 1.25rem; */
+  font-weight: 400;
+  position: absolute;
+  left: 5rem;
+  top: 17.25rem;
+}
+.divider {
+  position: relative;
+}
+.divider p {
+  font-size: 1.625rem;
+  text-transform: uppercase;
+  margin: 0 2.5625rem;
+  padding-top: 1.5625rem;
+}
+.divider p:after {
+  height: 5.5rem;
+  width: 0.0625rem;
+  content: "";
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  bottom: 80%;
+  left: 50%;
+}
+.divider p:before {
+  height: 6rem;
+  width: 0.0625rem;
+  content: "";
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  bottom: -165%;
+  left: 50%;
+}
+.loyalpt {
+  width: 5.25rem;
+  font-size: 1.5rem;
+  display: inline-block;
+}
+.focusable.cancel:focus,
+.focusable.btn-bill.active:active {
+  border: none;
+  border-radius: 0;
+  -webkit-transform: none;
+  transform: none;
+}
+.focusable.cancel:focus button,
+.focusable.btn-bill.active:active button {
+  border: 3px solid rgb(255, 255, 255, 1);
+}
+
+.focusable:focus > button {
+  border: none;
+  transform: none;
+}
+.roombill .focusable {
+  margin-right: 0;
+  transform: none;
+}
+.billbox {
+  width: 31.875rem;
+  height: 15.625rem;
+}

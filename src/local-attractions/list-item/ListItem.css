@@ -1,0 +1,86 @@
+.localmain {
+  margin-bottom: 0.9375rem;
+}
+.localbox {
+  width: 73.816rem;
+  height: 22.8125rem;
+  background: #1a1a1a;
+  position: relative;
+}
+
+.localbox .localimg {
+  height: 22.8125rem;
+  width: 22.8125rem;
+  position: absolute;
+}
+.localbox .localimg img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.localbox .localcontent {
+  margin-left: 22.8125rem;
+  padding-left: 3.3125rem;
+  padding-right: 3.3125rem;
+  position: relative;
+}
+.localbox .localcontent .localstatus {
+  position: absolute;
+  right: 1.5625rem;
+  top: 0.8125rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+.localbox .localcontent h4 {
+  padding-top: 1.53125rem;
+  font-size: 2.625rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0.625rem;
+}
+.localbox .localcontent .pricetag {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+.localbox .localcontent p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  /*autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+.localbox .localcontent p.ladesc {
+  -webkit-line-clamp: 7;
+}
+.localcontainer .focusableContent:focus {
+  border: 4px solid white;
+  -webkit-transform: scale(1.017);
+  transform: scale(1.017);
+}
+.localcontainer .focusableContent:focus .localbox,
+.localcontainer .focusableContent.active:active .localbox {
+  background: #2e2e2e;
+}
+.btn-buy {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16.3125rem;
+  height: 5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.sidenavmenu {
+  height: 6.4375rem;
+}
+.sidenavmenu.active {
+  background: #2e2e2e;
+  border: none;
+  font-size: 2.25rem !important;
+}
+.locallistitem {
+  margin-bottom: 0.9375rem;
+}

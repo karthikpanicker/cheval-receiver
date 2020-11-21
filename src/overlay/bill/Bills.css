@@ -1,0 +1,66 @@
+.blur-container {
+  text-align: center;
+  margin: 0 auto;
+  width: 43.375rem;
+  padding-top: 3.125rem;
+}
+.blur-container.billcont {
+  width: 100%;
+}
+.billicon img {
+  height: 4.6875rem;
+}
+.billicon h5 {
+  font-size: 3.125rem;
+  font-weight: 500;
+  margin: 0;
+  margin-top: 1.0625rem;
+}
+.roombill {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-weight: 400;
+  margin: 5.6875rem 0 7.125rem 0;
+}
+.blur-container.billcont .roombill .roomdeet {
+  margin-right: 6.25rem;
+}
+.roombill .roomdeet {
+  text-align: left;
+}
+.roombill .roomamt {
+  text-align: left;
+}
+.roombill .roomdet1 {
+  font-size: 2.5rem;
+  margin: 0;
+  margin-bottom: 0.625rem;
+}
+.roombill .roomdet2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+.roombill .roomamt p {
+  font-size: 6.25rem;
+  margin: 0;
+  display: inline-block;
+}
+.billmsg {
+  font-size: 1.5rem;
+  margin: 0;
+  margin-bottom: 3.75rem;
+  font-weight: 400;
+}
+
+.focusbill {
+  margin-right: 0;
+}
+.roomamt span {
+  font-size: 6.25rem;
+  margin: 0;
+  display: inline-block;
+  margin-right: 0.3125rem;
+}

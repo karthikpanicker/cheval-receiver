@@ -1,0 +1,12 @@
+.aboutheadmain {
+  background-image: url("../images/cheval.jpg");
+}
+.aboutdata {
+  font-size: 1.875rem;
+  line-height: 2.875rem;
+  margin-top: 3.03125rem;
+  max-width: 105.6875rem;
+}
+.abouthead {
+  padding-top: 19.75rem;
+}

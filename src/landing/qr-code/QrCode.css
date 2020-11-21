@@ -1,0 +1,28 @@
+.qr-description{
+    float: right;
+    padding-left: 1.9rem;
+
+}
+
+ .qr-description li  {
+    font-weight: 500;
+    padding: 0;
+
+}
+
+.qr-description li:first-child {
+    list-style: none;
+}
+
+.qr-description li:first-child:before {
+    content: '1.';
+    display: inline-block;
+    margin-left: -1rem;
+}
+
+.qr-code {
+    width: 6rem;
+    height: auto;
+    border: 0.5rem solid #fff;
+    border-radius: .7rem;
+}

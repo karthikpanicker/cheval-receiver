@@ -1,0 +1,62 @@
+.listopt {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 22.6875rem;
+  width: 24.9375rem;
+  transition: all 0.3s ease-in-out;
+}
+.focusable {
+  margin-right: 3.5rem;
+}
+
+.listservices .listopt {
+  height: 16.625rem;
+  width: 18.9375rem;
+  margin-right: 0;
+}
+.listservices.listmain {
+  padding-top: 15rem;
+}
+.listservices.listmain .focusable.landfocus:focus,
+.listservices.listmain .focusable.landfocus.active:active {
+  border-radius: 8px;
+  transform: scale(1.2);
+}
+
+.focusable:focus,
+.focusable.active:active {
+  border: 3px solid white;
+  /* border-radius: 8px; */
+  transform: scale(1.1);
+}
+.focusable.landfocus:focus,
+.focusable.landfocus.active:active {
+  border-radius: 8px;
+}
+.focusable.btn-bill:focus,
+.focusable.btn-bill.active:active {
+  border: none;
+  border-radius: 0;
+  transform: none;
+}
+.focusable.btn-bill:focus button,
+.focusable.btn-bill.active:active button {
+  border: 3px solid rgb(255, 255, 255, 1);
+}
+
+.listopt .listimg img {
+  height: 6.125rem;
+}
+.listmain .listopt .listcontent {
+  margin-top: 2.2rem;
+}
+.listopt .listcontent p {
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 2.125rem;
+  margin: 0;
+}

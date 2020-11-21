@@ -1,0 +1,16 @@
+.heroimg {
+  height: 33.375rem;
+  width: 100%;
+}
+.heroimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroimg.focusable:focus,
+.heroimg.focusable.active:active {
+  -webkit-transform: scale(0.999);
+  transform: scale(0.999);
+  border-radius: none;
+}

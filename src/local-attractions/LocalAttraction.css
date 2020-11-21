@@ -1,0 +1,58 @@
+.localcontainer {
+  background: black;
+  height: 100%;
+}
+.localcontainer .sidebarmenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 33.4375rem;
+  background: #0f0f0f;
+  height: 100vh;
+  padding-left: 7.25rem;
+}
+.localcontainer .sidebarmenu .mainlogo {
+  padding-left: 0;
+}
+.localcontainer .sidebarmenu .sidenav {
+  padding-top: 8.125rem;
+}
+.localcontainer .sidebarmenu .sidenav .sidenavmenu {
+  padding: 1.4375rem 0 1.4375rem 2.25rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.localcontainer .sidebarmenu .sidenav .focusable:focus,
+.localcontainer .sidebarmenu .sidenav .focusable.active:active {
+  margin: 20px;
+  border-radius: 0;
+}
+.localcontainer .sidebarmenu .sidenav .focusable:focus .sidenavmenu,
+.localcontainer .sidebarmenu .sidenav .focusable.active:active .sidenavmenu {
+  font-size: 2.25rem;
+  background: transparent !important;
+}
+.localcontainer .localdata {
+  background: black;
+  width: 86.5625rem;
+  margin: 0 0 0 33.34rem;
+  padding: 3.0625rem 5.375rem 0 6.9375rem;
+  min-height: 100vh;
+}
+.localcontainer .localdata h2 {
+  font-size: 2.625rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+.souvenirsdesc {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+.listitemdiv {
+  margin-top: 2.3125rem;
+}
+.sidebarmenu .focusable {
+  margin-right: 0;
+}

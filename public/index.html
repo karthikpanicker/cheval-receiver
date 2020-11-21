@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <script src="%PUBLIC_URL%/scripts.js"></script>
+
+    <!--<script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>-->
+    <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
+    <!--<script src="//www.gstatic.com/cast/sdk/libs/mediaplayer/1.0.0/media_player.js"></script>-->
+    <title>Cantiz Connect</title>
+    <style>
+      #media {
+        visibility:hidden
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!--<cast-media-player  id="media"></cast-media-player>-->
+
+
+    <div id="root"></div>
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+  <script>
+
+      window.context = cast.framework.CastReceiverContext.getInstance();
+      window.playerManager = window.context.getPlayerManager();
+      window.context.setLoggerLevel(cast.framework.LoggerLevel.DEBUG);
+
+
+      // Update ui according to player state
+     // const playerManager = context.getPlayerManager();
+
+      // Listen and log all Core Events.
+      playerManager.addEventListener(cast.framework.events.category.CORE,
+          event => {
+              console.log("Core event: " + event.type);
+              console.log(event);
+          });
+
+      playerManager.addEventListener(
+          cast.framework.events.EventType.MEDIA_STATUS, (event) => {
+              console.log("MEDIA_STATUS event: " + event.type);
+              console.log(event);
+          });
+
+      // Intercept the LOAD request to be able to read in a contentId and get data.
+      playerManager.setMessageInterceptor(
+          cast.framework.messages.MessageType.LOAD, loadRequestData => {
+              return loadRequestData;
+          });
+
+      const playbackConfig = new cast.framework.PlaybackConfig();
+
+      // Set the player to start playback as soon as there are five seconds of
+      // media content buffered. Default is 10.
+      playbackConfig.autoResumeDuration = 5;
+
+      // Set the available buttons in the UI controls.
+      const controls = cast.framework.ui.Controls.getInstance();
+      controls.clearDefaultSlotAssignments();
+
+      // Assign buttons to control slots.
+      controls.assignButton(
+          cast.framework.ui.ControlsSlot.SLOT_1,
+          cast.framework.ui.ControlsButton.QUEUE_PREV
+      )
+      controls.assignButton(
+          cast.framework.ui.ControlsSlot.SLOT_2,
+          cast.framework.ui.ControlsButton.CAPTIONS
+      )
+      controls.assignButton(
+          cast.framework.ui.ControlsSlot.SLOT_3,
+          cast.framework.ui.ControlsButton.SEEK_FORWARD_15
+      )
+      controls.assignButton(
+          cast.framework.ui.ControlsSlot.SLOT_4,
+          cast.framework.ui.ControlsButton.QUEUE_NEXT
+      )
+
+
+      window.context.start({
+          playbackConfig: playbackConfig,
+          supportedCommands: cast.framework.messages.Command.ALL_BASIC_MEDIA
+      });
+
+
+  </script>
+</html>

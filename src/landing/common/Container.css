@@ -1,0 +1,50 @@
+.maintophead {
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+}
+.maintophead:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: repeat;
+  background-image: url("../../images/homegradient.png");
+  background-size: 0.125rem 67.5rem;
+}
+.mainlogo {
+  height: 3.125rem;
+  width: 20.125rem;
+  padding-top: 3.4375rem;
+  padding-left: 1.6875rem;
+}
+.mainlogo img {
+  height: 3.125rem;
+}
+.tophead {
+  padding-top: 13.9375rem;
+  padding-left: 1.6875rem;
+}
+.tophead h2 {
+  font-size: 4.5rem;
+  font-weight: 500;
+}
+.tophead h4 {
+  font-size: 3rem;
+  font-weight: 400;
+  padding-top: 0.375rem;
+}
+.lanhead.tophead h4 {
+  min-height: 4.875rem;
+}
+.listmain {
+  margin: 0;
+  display: flex;
+  margin-bottom: 1.1rem;
+  padding-top: 12rem;
+}
+.listservices {
+  margin-right: 3.5625rem;
+}

@@ -1,0 +1,13 @@
+.railrow {
+  padding-left: 1.6875rem;
+}
+.railrow .railhead {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 1.625rem 0 1.625rem;
+}
+.movietilesrow {
+  display: flex;
+  flex-flow: row;
+  margin-bottom: 1.875rem;
+}

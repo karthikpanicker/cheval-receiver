@@ -1,0 +1,16 @@
+.movietile {
+  height: 20.3125rem;
+  width: 14.5625rem;
+  margin-right: 3.125rem;
+}
+.movietile:focus,
+.movietile:active {
+  border: 3px solid white;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.movietile img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

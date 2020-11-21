@@ -1,0 +1,49 @@
+.maintophead {
+  background: linear-gradient(
+      /* to bottom,
+      transparent 0%,
+      #000000 57%,
+      black 100% */
+        url("../images/homegradient.png")
+    ),
+    url("../images/hotel.jpg") no-repeat;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+}
+.mainlogo {
+  height: 3.125rem;
+  width: 20.125rem;
+  padding-top: 3.4375rem;
+  padding-left: 1.6875rem;
+}
+.mainlogo img {
+  height: 3.125rem;
+}
+.tophead {
+  padding-top: 13.9375rem;
+  padding-left: 1.6875rem;
+}
+.tophead h2 {
+  font-size: 4.5rem;
+  font-weight: 500;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /*autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+.tophead h4 {
+  font-size: 3rem;
+  font-weight: 400;
+  padding-top: 0.375rem;
+}
+.listmain > div {
+  margin: 0;
+  display: flex;
+  margin-bottom: 1.1rem;
+  padding-top: 12rem;
+}
+.listservices {
+  margin-right: 3.5625rem;
+}

@@ -1,0 +1,110 @@
+.previewcontainer {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.previewcontainer:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: repeat;
+  background-image: url("../../images/detail_page_gradient.png");
+  background-size: 120rem 0.0625rem;
+}
+.mainlogo {
+  height: 3.125rem;
+  width: 20.125rem;
+  padding-top: 3.4375rem;
+  padding-left: 1.6875rem;
+}
+.mainlogo img {
+  height: 3.125rem;
+}
+.tophead {
+  padding-left: 1.6875rem;
+}
+.tophead.previewhead {
+  position: absolute;
+  bottom: 7.5rem;
+  padding-top: 0;
+  max-width: 57.75rem;
+}
+.previewdet p {
+  font-size: 1.75rem;
+  margin-top: 0;
+}
+.previewdet p .pdivision {
+  padding: 0 1.25rem;
+}
+.prev-actions {
+  display: flex;
+  align-items: center;
+}
+.prev-actions .prev-options {
+  width: 15.625rem;
+  height: 10rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 3px solid rgba(255, 255, 255, 0.38);
+  padding: 2.1875rem 0.3125rem;
+  margin-right: 3.125rem;
+}
+.prev-actions .prev-options:focus,
+.prev-actions .prev-options:active {
+  border: 3px solid white;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  background-color: rgba(0, 0, 0, 0.64);
+}
+.prev-actions .prev-options h5 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 0.8125rem;
+  margin-bottom: 0;
+}
+
+.prev-actions .prev-options img {
+  max-height: 3rem;
+}
+.previewdesc {
+  font-size: 1.5rem;
+  line-height: 2.375rem;
+  margin-bottom: 3rem;
+}
+.tophead h2 {
+  font-size: 4.5rem;
+  font-weight: 500;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /*autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+.tophead h4 {
+  font-size: 3rem;
+  font-weight: 400;
+  padding-top: 0.375rem;
+}
+.resumebtn {
+  position: relative;
+}
+.resumeprogress {
+  position: absolute;
+  background: #aeaeae;
+  height: 0.625rem;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+.currentProgress {
+  position: absolute;
+  background: #1b29ee;
+  height: 0.625rem;
+  width: 20%;
+  left: 0;
+  bottom: 0;
+}
