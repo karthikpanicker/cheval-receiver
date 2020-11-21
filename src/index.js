@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import SpatialNavigation from 'react-js-spatial-navigation';
 ReactDOM.render((
-    <BrowserRouter  basename={'/cheval'}>
+    <BrowserRouter  basename={'/'}>
     <SpatialNavigation>
     <App />
     </SpatialNavigation>
