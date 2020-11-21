@@ -2,7 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://customreceiver.connect.cantiz.com/cheval",
+  "homepage": "https://unruffled-noether-61f2ce.netlify.app/",
   "dependencies": {
     "mobx": "^5.8.0",
     "mobx-react": "^5.4.3",
