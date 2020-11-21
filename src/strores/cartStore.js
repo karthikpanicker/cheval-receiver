@@ -15,7 +15,6 @@ class CartStore {
        this.cartItem.type = item.type;
    }
     redeemPoints() {
-        let message ;
         if(this.cartItem.type === 'souvenirs') {
             this.cartItem.messages = [`${this.cartItem.pricePoints} loyalty point has been redeemed`,
                 `Your souvenir will be delivered to your room`];

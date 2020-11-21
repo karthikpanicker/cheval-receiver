@@ -26,7 +26,7 @@ class Container extends Component {
         >
           <div className="container pabs">
             <div className="mainlogo">
-              <img src={logo} />
+              <img src={logo} alt="Logo"/>
             </div>
             <div className="tophead lanhead">
               <h2 className="ma-0">{this.props.title}</h2>

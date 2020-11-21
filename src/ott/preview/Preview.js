@@ -68,22 +68,15 @@ class Preview extends Component {
               </p>
               <div className="prev-actions">
                 <Focusable className="prev-options" onClickEnter={this.play}>
-                  <img src={previewimg} />
+                  <img src={previewimg} alt="preview"/>
                   <h5>Preview</h5>
                 </Focusable>
                 <Focusable className="prev-options" onClickEnter={this.buy}>
-                  <img src={Play} />
+                  <img src={Play} alt="play button"/>
                         <h5>{ !this.movie.isPurchased ? `Watch for ${this.movie.price}` : 'Watch'} </h5>
 
 
                 </Focusable>
-                {/*<Focusable className="prev-options resumebtn">*/}
-                  {/*<img src={Play} />*/}
-                  {/*<h5>Resume</h5>*/}
-                  {/*<div className="resumeprogress">*/}
-                    {/*<div className="currentProgress" />*/}
-                  {/*</div>*/}
-                {/*</Focusable>*/}
                 <Focusable className="prev-options">
                   <img src={watchlist} />
                   <h5>Watchlist</h5>

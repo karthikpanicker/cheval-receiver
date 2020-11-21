@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./rail.css";
 import MovieTile from "../movie-tile/movie-tile";
-import Bouquets from "../bouquets/Bouquets";
 
 class Rail extends Component {
 

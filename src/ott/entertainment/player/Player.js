@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import "./Player.css";
-/*global cast , dashjs */
 class Player extends Component {
     store;
     video;
