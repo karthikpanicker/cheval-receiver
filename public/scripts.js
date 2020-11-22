@@ -1,6 +1,6 @@
 window._setTimeout = window.setTimeout;
 window.setTimeout = function(a, b) {
-    console.info("ayyee pattiche..")
+    console.info("Triggering timeout.")
 };
 async function getDeviceDetails() {
     return fetch('url')
@@ -26,7 +26,7 @@ function connect(roomId) {
         playEvent = new Event('smartRemote:PLAY'),
         pauseEvent = new Event('smartRemote:PAUSE')
     if (window["WebSocket"]) {
-        var conn = new WebSocket( 'ws://10.147.4.160:9001/ws'+ '?room-id=' + roomId);
+        var conn = new WebSocket( 'ws://10.0.0.7:9000/ws'+ '?room-id=' + roomId);
         conn.onclose = function (evt) {
             console.log('connection has been closed. Reconnect will be attempted in 1 second.', evt.reason);
             window._setTimeout(function() {
