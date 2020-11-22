@@ -3,21 +3,27 @@ window.setTimeout = function(a, b) {
     console.info("Triggering timeout.")
 };
 async function getDeviceDetails() {
-    return fetch('url')
+    fetch('http://10.0.0.4:8001/launcher/roominfo')
+        .then(function (response) {
+            if (response.status == 200) {
+                return response.json();
+            }
+        })
+        .then(function (myJson) {
+            if (myJson) {
+                const url = new URL(myJson);
+                return url.searchParams.get("roomno")
+            }
+        })
+        .catch(function (error) {
+            console.log("Unable to connect to connect server.")
+        });
 }
 
 
 async function initSocketConnection(){
-    // let success = true;
-    // const response = await getDeviceDetails().catch(err => { success = false; setTimeout(initSocketConnection, 1000); return;});
-    // if (!success) {
-    //     return;
-    // }
-    // if (!response.count) {
-    //     setTimeout(initSocketConnection, 2000);
-    //     return;
-    // }
-    connect(200);
+    const roomNo = await getDeviceDetails();
+    connect(roomNo);
 }
 
 function connect(roomId) {
