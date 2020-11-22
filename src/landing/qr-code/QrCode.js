@@ -49,7 +49,7 @@ class QrCode extends Component {
             <img id="qr-code" className="qr-code" alt="qr code"/>
             }
             { this.state.isFinished &&
-            <ol>
+            <ol className="qr-description">
                 <li> {'Connect to guest Wifi'}</li>
                 <li> {' Scan the QR code'}</li>
                 <li> {'Cast using your favorite app'}</li>
