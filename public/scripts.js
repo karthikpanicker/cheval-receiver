@@ -17,7 +17,7 @@ async function initSocketConnection(){
     //     setTimeout(initSocketConnection, 2000);
     //     return;
     // }
-    connect(4000);
+    connect(200);
 }
 
 function connect(roomId) {
