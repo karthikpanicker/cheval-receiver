@@ -14,7 +14,7 @@ class QrCode extends Component {
     fetchQr = () => {
         fetch('http://10.0.0.7:8001/launcher/roominfo')
             .then((response) => {
-                if (response.status == 200) {
+                if (response.status === 200) {
                     return response.json();
                 } else {
                     this.responseJson = null;
@@ -31,7 +31,7 @@ class QrCode extends Component {
     }
 
     generateQr() {
-        var qr = new QRious({
+        new QRious({
             element: document.getElementById('qr-code'),
             value: this.responseJson
         });
@@ -46,7 +46,7 @@ class QrCode extends Component {
         return (
         <div>
             { this.state.isFinished &&
-            <img id="qr-code" className="qr-code"/>
+            <img id="qr-code" className="qr-code" alt="qr code"/>
             }
             { this.state.isFinished &&
             <ol>
