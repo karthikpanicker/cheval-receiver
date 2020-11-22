@@ -52,7 +52,7 @@ class QrCode extends Component {
             <ol className="qr-description">
                 <li> {'Connect to guest Wifi'}</li>
                 <li> {' Scan the QR code'}</li>
-                <li> {'Cast using your favorite app'}</li>
+                <li> {'Cast your favorite app'}</li>
             </ol>
             }
 
