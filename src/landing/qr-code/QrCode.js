@@ -12,7 +12,7 @@ class QrCode extends Component {
     }
 
     fetchQr = () => {
-        fetch('http://10.147.4.160:8000/api/roominfo')
+        fetch('http://10.0.0.7:8001/launcher/roominfo')
             .then((response) => {
                 if (response.status == 200) {
                     return response.json();

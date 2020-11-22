@@ -5,6 +5,7 @@ import logo from "../../images/cantiz_connect_logo.svg";
 import {
   JsSpatialNavigation
 } from "react-js-spatial-navigation";
+import QrCode from "../qr-code/QrCode"
 
 class Container extends Component {
 
@@ -28,6 +29,13 @@ class Container extends Component {
             <div className="mainlogo">
               <img src={logo} alt="Logo"/>
             </div>
+            {
+              this.props.qr &&
+              <div className="pull-right">
+
+                <QrCode></QrCode>
+              </div>
+            }
             <div className="tophead lanhead">
               <h2 className="ma-0">{this.props.title}</h2>
               <h4 className="ma-0">{this.props.description}</h4>
