@@ -25,6 +25,7 @@ class Landing extends Component {
                  services={this.landingState.isService}
                  bgStyle={this.landingState.backgroundStyle}
                  tiles={this.landingState.tiles}
+                 qr={true}
                  onFocus={this.onNavTileFocus}
                  onEnter= {this.onNavTileEnter}/>
     );
