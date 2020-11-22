@@ -3,27 +3,19 @@ window.setTimeout = function(a, b) {
     console.info("Triggering timeout.")
 };
 async function getDeviceDetails() {
-    fetch('http://10.0.0.7:8001/launcher/roominfo')
-        .then(function (response) {
-            if (response.status == 200) {
-                return response.json();
-            }
-        })
-        .then(function (myJson) {
-            if (myJson) {
-                const url = new URL(myJson);
-                return url.searchParams.get("roomno")
-            }
-        })
-        .catch(function (error) {
-            console.log("Unable to connect to connect server.")
-        });
+    const response = await fetch('http://10.0.0.7:8001/launcher/roominfo');
+    const roomInfo = await response.json();
+    const url = new URL(roomInfo);
+    return url.searchParams.get("roomno");
 }
 
-
 async function initSocketConnection(){
-    const roomNo = await getDeviceDetails();
-    connect(roomNo);
+    try{
+        const roomNo = await getDeviceDetails();
+        connect(roomNo);
+    } catch {
+        console.log("error subscribing to rooms websocket")
+    }
 }
 
 function connect(roomId) {
