@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>.cls-1, .cls-2, .cls-3 {
+            fill: none;
+            }
+            .cls-1 {
+            stroke: #707070;
+            }
+            .cls-3 {
+            font-size: 100px;
+            font-family: Poppins-Regular, Poppins;
+            }
+            .cls-4 {
+            stroke: none;
+            }</style>
+    </defs>
+    <g transform="translate(-51)" data-name="Group 2">
+        <g class="cls-1" transform="translate(51)" data-name="Rectangle 5">
+            <rect class="cls-4" width="600" height="600"/>
+            <rect class="cls-2" x=".5" y=".5" width="599" height="599"/>
+        </g>
+        <g data-name="Group 1">
+            <path class="cls-2" transform="translate(65 163)" d="m154 270a131.01 131.01 0 0 1-25.606-2.521 129.25 129.25 0 0 1-45.619-18.71 130.45 130.45 0 0 1-47.135-54.926 129.36 129.36 0 0 1-11.545-48.843h15.012a114.87 114.87 0 0 0 114.89 110v15z" data-name="Subtraction 3"/>
+            <path class="cls-2" transform="translate(119 180)" d="m100 220a100.74 100.74 0 0 1-20.153-2.032 99.451 99.451 0 0 1-35.757-15.047 100.29 100.29 0 0 1-36.23-44 99.5 99.5 0 0 1-5.827-18.771 100.98 100.98 0 0 1 0-40.307 99.451 99.451 0 0 1 15.045-35.754 100.29 100.29 0 0 1 44-36.23 99.5 99.5 0 0 1 18.771-5.827 100.74 100.74 0 0 1 20.151-2.032v15h-0.016a85.55 85.55 0 0 0-17.115 1.726 84.535 84.535 0 0 0-30.394 12.79 85.247 85.247 0 0 0-30.8 37.4 84.57 84.57 0 0 0-4.953 15.955 85.831 85.831 0 0 0 0 34.261 84.536 84.536 0 0 0 12.79 30.394 85.247 85.247 0 0 0 37.4 30.8 84.572 84.572 0 0 0 15.955 4.953 85.629 85.629 0 0 0 17.133 1.721v15z" data-name="Subtraction 1"/>
+            <path class="cls-2" transform="translate(149 230)" d="M70,140h-.008a69.665,69.665,0,0,1-39.13-11.954A70.2,70.2,0,0,1,5.5,97.247a69.908,69.908,0,0,1,6.454-66.385A70.2,70.2,0,0,1,42.753,5.5a69.908,69.908,0,0,1,66.385,6.454,70.2,70.2,0,0,1,25.362,30.8A69.561,69.561,0,0,1,140,70H70Z" data-name="Subtraction 2"/>
+            <text class="cls-3" transform="translate(240 308)">
+                <tspan x="0" y="105">CAEIGO</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

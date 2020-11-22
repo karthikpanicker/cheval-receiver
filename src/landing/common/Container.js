@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Container.css";
 import NavTile from "./../nav-tile/NavTile";
-import logo from "../../images/cantiz_connect_logo.svg";
+import logo_caeigo from "../../images/logo_caeigo.svg";
 import {
   JsSpatialNavigation
 } from "react-js-spatial-navigation";
@@ -27,7 +27,7 @@ class Container extends Component {
         >
           <div className="container pabs">
             <div className="mainlogo">
-              <img src={logo} alt="Logo"/>
+              <img src={logo_caeigo} alt="Logo"/>
             </div>
             {
               this.props.qr &&
