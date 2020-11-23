@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Container.css";
 import NavTile from "./../nav-tile/NavTile";
-import caeigo from "../../images/caeigo.svg";
+import caeigo from "../../images/logo_caeigo.svg";
 import {
   JsSpatialNavigation
 } from "react-js-spatial-navigation";
