@@ -1,80 +1,168 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import "./Player.css";
+/* global Plyr,Hls  */
 class Player extends Component {
     store;
     video;
     host;
     protocol;
     context;
-    isPlaying = true;
     conn;
+    promise;
+    player;
+    hls;
+    isLoading = true;
+
     constructor(props) {
         super(props);
         this.store = this.props.store;
-      //  this.playContent()
     }
 
-    playContent() {
-        fetch('http://10.154.5.151:5000/media/load', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                url: this.store.selectedMovie.preview.video,
-                content_type: this.store.selectedMovie.preview.content_type,
-            })
-        })
-
-    }
-
-    mediaEventListener = event => {
-        let { history } = this.props;
-        if(event.type === 'MEDIA_FINISHED' && event.endedReason === 'END_OF_STREAM') {
-            history.goBack();
-            document.getElementById('media').style.visibility = "hidden";
+    loadVideo() {
+        this.video.setAttribute("controlsList","nofullscreen nodownload nopictureinpicture");
+        this.video.setAttribute("type", this.store.selectedMovie.preview.content_type);
+        let controls;
+        if (this.store.selectedMovie.type === 'TV') {
+            controls = ['play-large'];
+        } else {
+            controls = ['play-large', 'progress', 'current-time',]
         }
+        this.player = new Plyr(this.video, {captions: {active: true, update: true, language: 'en'},
+            controls:controls,
+            loadSprite:true,
+            seekTime:10});
+        if(this.store.selectedMovie.preview.content_type !== 'application/x-mpegURL') {
+            this.video.setAttribute("src", this.store.selectedMovie.preview.video);
+        } else {
+            if (!Hls.isSupported()) {
+                this.video.setAttribute("src", this.store.selectedMovie.preview.video);
+            } else {
+                // For more Hls.js options, see https://github.com/dailymotion/hls.js
+                this.hls = new Hls();
+                this.hls.loadSource(this.store.selectedMovie.preview.video);
+                this.hls.attachMedia(this.video);
+            }
+        }
+        this.video.load();
+        this.video.play();
     }
 
     addMediaEventListener() {
-       // window.playerManager.addEventListener(cast.framework.events.category.CORE, this.mediaEventListener);
+        document.body.addEventListener('smartRemote:PLAY', this.play);
+        document.body.addEventListener('smartRemote:PAUSE', this.pause)
+        document.body.addEventListener('smartRemote:PLAY-PAUSE', this.togglePlayback);
+        document.body.addEventListener('smartRemote:FORWARD', this.forward);
+        document.body.addEventListener('smartRemote:REWIND', this.rewind);
+        window.addEventListener('keypress', this.mediaPlayerHandler);
+        document.getElementById('mediaElement').addEventListener('ended',this.mediaEndHandler,false);
+        document.getElementById('mediaElement').addEventListener('loadstart',this.addLoader,false);
+        document.getElementById('mediaElement').addEventListener('canplay',this.removeLoader,false);
 
     }
 
     play = () => {
-            fetch('http://10.154.5.151:5000/media/play');
+        this.video.play();
     }
 
-    pause = () =>  {
-            fetch('http://10.154.5.151:5000/media/pause')
+    test = (event) => {
+        console.log(event)
     }
 
-    stop() {
-    fetch('http://10.154.5.151:5000/media/stop')
-        .then(res => { document.getElementById('media').style.visibility = "hidden";})
+    mediaPlayerHandler = (event) =>{
+        if(this.isLoading) {
+            return;
+        }
+        if(event.keyCode === 13) {
+            //this.togglePlayback();
+            return;
+
+        }
+        document.getElementById('mediaElement').dispatchEvent(new KeyboardEvent('keypress',{'keyCode': event.keyCode}));
+        document.getElementById('mediaElement').dispatchEvent(new KeyboardEvent('keydown',{'keyCode': event.keyCode}));
+        document.getElementById('mediaElement').dispatchEvent(new KeyboardEvent('keyup',{'keyCode': event.keyCode}));
+    }
+
+    pause = () => {
+        this.video.pause();
+    }
+
+    togglePlayback = () => {
+        if(this.player.paused) {
+            this.play();
+        } else {
+            this.pause();
+        }
+    }
+
+    forward = () => {
+        this.player.forward();
+    }
+
+    rewind = () => {
+        this.player.rewind()
+    }
+
+    addLoader = () => {
+        this.isLoading = true;
+        this.video.classList.add("black");
+        this.video.setAttribute("poster", "https://i.gifer.com/V8kX.gif");
+    }
+
+    removeLoader = () => {
+        this.isLoading = false;
+        this.video.classList.remove("black")
+        this.video.removeAttribute("poster");
+    }
+
+
+    stopVideo = () => {
+        this.video.pause();
+        this.video.removeAttribute('src'); // empty source
+        this.video.load();
+        if(this.hls) {
+            this.hls.destroy();
+        }
     }
 
 
     componentDidMount() {
-        // document.getElementById('media').style.visibility = "visible";
-        // document.body.addEventListener('smartRemote:PLAY', this.play);
-
-        // document.body.addEventListener('smartRemote:PAUSE', this.pause)
-        // this.addMediaEventListener();
-
+        this.loadVideo();
+        this.addMediaEventListener();
     };
 
-    componentWillUnmount() {
-        // document.body.removeEventListener('smartRemote:PLAY', this.play );
-        // document.body.removeEventListener('smartRemote:PAUSE', this.pause);
-        // window.playerManager.removeEventListener(cast.framework.events.category.CORE, this.mediaEventListener);
-        // this.stop();
+    removeEventHandlers() {
+        document.body.removeEventListener('smartRemote:PLAY', this.play );
+        document.body.removeEventListener('smartRemote:PAUSE', this.pause);
+        document.body.removeEventListener('smartRemote:PLAY-PAUSE', this.togglePlayback);
+        document.body.removeEventListener('smartRemote:FORWARD', this.forward);
+        document.body.removeEventListener('smartRemote:REWIND', this.rewind);
+        window.removeEventListener('keypress', this.mediaPlayerHandler);
+        document.getElementById('mediaElement').removeEventListener('ended',this.mediaEndHandler);
+        document.getElementById('mediaElement').removeEventListener('loadstart',this.addLoader);
+        document.getElementById('mediaElement').removeEventListener('canplay',this.removeLoader);
     }
 
+    mediaEndHandler = () => {
+        let {history} = this.props;
+        history.goBack();
+    }
+
+    componentWillUnmount() {
+        this.removeEventHandlers();
+        this.stopVideo();
+
+    }
+
+
+
     render() {
-        return(
-           ' <cast-media-player  id="media"></cast-media-player>'
+        return (
+            <div tabIndex="0"
+                 className="plyr plyr--full-ui plyr--video plyr--html5 plyr--pip-supported plyr--fullscreen-enabled">
+                <video className={'video'} poster={this.store.selectedMovie.preview.poster}
+                       id="mediaElement" preload="none" controls ref={(v)=>{this.video=v}}>
+                </video>
+            </div>
         )
     }
 }
