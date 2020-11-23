@@ -52,7 +52,7 @@ class OttStore {
                         poster: '//pmcdeadline2.files.wordpress.com/2018/12/CBSN.jpg?w=681&h=383&crop=1',
                         preview: {
                             poster: 'https://i.gifer.com/V8kX.gif',
-                            video: '//cbsn-us-cedexis.cbsnstream.cbsnews.com/out/v1/55a8648e8f134e82a470f83d562deeca/master_4.m3u8',
+                            video: 'https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8',
                             content_type: 'application/x-mpegURL'
                         }
 
@@ -63,7 +63,7 @@ class OttStore {
                         poster: '//e00-elmundo.uecdn.es/television/programacion-tv/img/v2/programas/b6/238518.png',
                         preview: {
                             poster: 'https://i.gifer.com/V8kX.gif',
-                            video: 'http://ccma-tva-int-abertis-live.hls.adaptive.level3.net/int/ngrp:324_mobil/playlist.m3u8',
+                            video: 'https://moctobpltc-i.akamaihd.net/hls/live/571329/eight/playlist.m3u8',
                             content_type: 'application/x-mpegURL'
                         }
 
