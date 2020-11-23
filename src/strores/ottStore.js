@@ -41,18 +41,7 @@ class OttStore {
                         poster: 'https://yt3.ggpht.com/a/AGF-l78RUbkAXvcFCTy446QaRPVfTpJhPokc8d9Rug=s900-mo-c-c0xffffffff-rj-k-no',
                         preview: {
                             poster: 'https://i.gifer.com/V8kX.gif',
-                            video: 'https://stream.skynewsarabia.com/ott/ott.m3u8',
-                            content_type: 'application/x-mpegURL'
-                        }
-
-                    },
-                    {
-                        id: 1002,
-                        type: 'TV',
-                        poster: '//pmcdeadline2.files.wordpress.com/2018/12/CBSN.jpg?w=681&h=383&crop=1',
-                        preview: {
-                            poster: 'https://i.gifer.com/V8kX.gif',
-                            video: 'https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8',
+                            video: 'https://youtu.be/2gVOPpiiL3A',
                             content_type: 'application/x-mpegURL'
                         }
 
@@ -63,7 +52,7 @@ class OttStore {
                         poster: '//e00-elmundo.uecdn.es/television/programacion-tv/img/v2/programas/b6/238518.png',
                         preview: {
                             poster: 'https://i.gifer.com/V8kX.gif',
-                            video: 'https://moctobpltc-i.akamaihd.net/hls/live/571329/eight/playlist.m3u8',
+                            video: 'https://youtu.be/2gVOPpiiL3A',
                             content_type: 'application/x-mpegURL'
                         }
 
