@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./entertainment.css";
 import Banner from "./banner/banner";
 import Rail from "./rail/rail";
-import logo from "../../images/cantiz_connect_logo.svg";
+import logo from "../../images/logo_caeigo.svg";
 
 class Entertainment extends Component {
   constructor(props) {
