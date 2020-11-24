@@ -33,6 +33,32 @@ class OttStore {
     setRails() {
         this.rails = [
             {
+                title: 'Live TV',
+                movies: [
+                    {
+                        id: 1003,
+                        type: 'TV',
+                        poster: 'https://yt3.ggpht.com/a/AGF-l78RUbkAXvcFCTy446QaRPVfTpJhPokc8d9Rug=s900-mo-c-c0xffffffff-rj-k-no',
+                        preview: {
+                            poster: 'https://i.gifer.com/V8kX.gif',
+                            video: 'https://stream.skynewsarabia.com/ott/ott.m3u8',
+                            content_type: 'application/x-mpegURL'
+                        }
+
+                    },
+                    {
+                        id: 1001,
+                        type: 'TV',
+                        poster: '//e00-elmundo.uecdn.es/television/programacion-tv/img/v2/programas/b6/238518.png',
+                        preview: {
+                            poster: 'https://i.gifer.com/V8kX.gif',
+                            video: 'http://ccma-tva-int-abertis-live.hls.adaptive.level3.net/int/ngrp:324_mobil/playlist.m3u8',
+                            content_type: 'application/x-mpegURL'
+                        }
+
+                    }],
+            },
+            {
                 title: 'Trending Movies',
                 movies: [{
                     id: 1,
