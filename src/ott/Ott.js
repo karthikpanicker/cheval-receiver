@@ -18,7 +18,7 @@ class Ott extends Component {
       if(this.store.selectedMovie) {
           JsSpatialNavigation.focus(`.item-${this.store.selectedMovie.id}`);
       } else {
-          JsSpatialNavigation.focus(`.item-1`);
+          JsSpatialNavigation.focus(`.item-1003`);
       }
 
   }
