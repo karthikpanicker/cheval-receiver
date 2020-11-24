@@ -6,7 +6,7 @@ import {
   JsSpatialNavigation
 } from "react-js-spatial-navigation";
 import ListItem from "./list-item/ListItem";
-import logo from "../images/cantiz_connect_logo.svg";
+import logo from "../images/logo_caeigo.svg";
 import { observer } from "mobx-react/index";
 
 class LocalAttractions extends Component {

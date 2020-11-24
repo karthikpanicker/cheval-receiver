@@ -6,24 +6,24 @@ import {
 import Entertainment from "./entertainment/entertainment";
 
 class Ott extends Component {
-  store = this.props.store;
-  constructor(props) {
-    super(props);
-    this.selectMovie = this.selectMovie.bind(this);
-  }
+    store = this.props.store;
+    constructor(props) {
+        super(props);
+        this.selectMovie = this.selectMovie.bind(this);
+    }
 
 
-  componentDidMount() {
-      document.body.addEventListener('smartremote:RETURN',this.resetFocus );
-      if(this.store.selectedMovie) {
-          JsSpatialNavigation.focus(`.item-${this.store.selectedMovie.id}`);
-      } else {
-          JsSpatialNavigation.focus(`.item-1`);
-      }
+    componentDidMount() {
+        document.body.addEventListener('smartRemote:RETURN',this.resetFocus );
+        if(this.store.selectedMovie) {
+            JsSpatialNavigation.focus(`.item-${this.store.selectedMovie.id}`);
+        } else {
+            JsSpatialNavigation.focus(`.item-1003`);
+        }
 
-  }
+    }
     componentWillUnmount() {
-        document.body.removeEventListener("smartremote:RETURN", this.resetFocus);
+        document.body.removeEventListener("smartRemote:RETURN", this.resetFocus);
     }
 
     resetFocus = () => {
@@ -34,20 +34,28 @@ class Ott extends Component {
         });
     };
 
-  selectMovie = (movie) => {
-      this.store.selectMovie(movie)
-      let { history } = this.props;
-      history.push({
-          pathname: `/preview`,
-      });
-  }
-  render() {
-    return (
-      <div>
-       <Entertainment store={this.store} onMovieSelection={this.selectMovie} history={this.props.history}/>
-      </div>
-    );
-  }
+    selectMovie = (movie) => {
+        this.store.selectMovie(movie);
+
+        let { history } = this.props;
+        if (movie.type === 'TV') {
+            history.push({
+                pathname: `/player`,
+            });
+
+            return;
+        }
+        history.push({
+            pathname: `/preview`,
+        });
+    }
+    render() {
+        return (
+            <div>
+                <Entertainment store={this.store} onMovieSelection={this.selectMovie} history={this.props.history}/>
+            </div>
+        );
+    }
 }
 
 export default Ott;
