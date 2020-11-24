@@ -56,8 +56,7 @@ class OttStore {
                             content_type: 'application/x-mpegURL'
                         }
 
-                    }],
-            },
+                    }],},
             {
                 title: 'Trending Movies',
                 movies: [{
