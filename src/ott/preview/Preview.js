@@ -7,7 +7,7 @@ import {
 import previewimg from "../../images/preview.svg";
 import Play from "../../images/play.svg";
 import watchlist from "../../images/watchlist.svg";
-import logo from "../../images/cantiz_connect_logo.svg";
+import logo from "../../images/logo_caeigo.svg";
 
 class Preview extends Component {
   movie = this.props.selectedMovie;
