@@ -47,7 +47,7 @@ class OttStore {
 
                     },
                     {
-                        id: 1001,
+                        id: 1002,
                         type: 'TV',
                         poster: '//e00-elmundo.uecdn.es/television/programacion-tv/img/v2/programas/b6/238518.png',
                         preview: {
